@@ -36,6 +36,7 @@
             this.labelTitular = new System.Windows.Forms.Label();
             this.labelNumeroConta = new System.Windows.Forms.Label();
             this.labelSaldo = new System.Windows.Forms.Label();
+            this.botaoSaque = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textoTitular
@@ -103,11 +104,22 @@
             this.labelSaldo.TabIndex = 7;
             this.labelSaldo.Text = "Saldo";
             // 
+            // botaoSaque
+            // 
+            this.botaoSaque.Location = new System.Drawing.Point(943, 92);
+            this.botaoSaque.Name = "botaoSaque";
+            this.botaoSaque.Size = new System.Drawing.Size(75, 23);
+            this.botaoSaque.TabIndex = 8;
+            this.botaoSaque.Text = "Saque";
+            this.botaoSaque.UseVisualStyleBackColor = true;
+            this.botaoSaque.Click += new System.EventHandler(this.BotaoSaque_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1461, 736);
+            this.Controls.Add(this.botaoSaque);
             this.Controls.Add(this.labelSaldo);
             this.Controls.Add(this.labelNumeroConta);
             this.Controls.Add(this.labelTitular);
@@ -134,6 +146,7 @@
         private System.Windows.Forms.Label labelTitular;
         private System.Windows.Forms.Label labelNumeroConta;
         private System.Windows.Forms.Label labelSaldo;
+        private System.Windows.Forms.Button botaoSaque;
     }
 }
 

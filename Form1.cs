@@ -40,5 +40,14 @@ namespace Banco
             textoSaldo.Text = Convert.ToString(this.c.Saldo);
             MessageBox.Show("Sucesso");
         }
+
+        private void BotaoSaque_Click(object sender, EventArgs e)
+        {
+            string valorDigitado = textoValor.Text;
+            double valorOperacao = Convert.ToDouble(valorDigitado);
+            this.c.Saca(valorOperacao);
+            textoSaldo.Text = Convert.ToString(this.c.Saldo);
+            MessageBox.Show("Sucesso");
+        }
     }
 }
