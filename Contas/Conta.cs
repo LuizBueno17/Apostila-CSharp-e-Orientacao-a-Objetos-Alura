@@ -5,14 +5,14 @@ namespace Banco
     public class Conta
     {
         public int Numero { get; set; }
-        public double Saldo { get; private set; }
+        public double Saldo { get; protected set; }
         internal Cliente Titular { get; set; }
 
-        internal void Deposita(double valor)
+        internal virtual void Deposita(double valor)
         {
             this.Saldo += valor;
         }
-        public void Saca(double valor)
+        public virtual void Saca(double valor)
         {
             this.Saldo -= valor;
         }

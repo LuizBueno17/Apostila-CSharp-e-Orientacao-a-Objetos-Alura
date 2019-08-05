@@ -20,12 +20,12 @@ namespace Banco
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Conta c = new Conta();
+            Conta c = new ContaPoupanca();
             c.Numero = 1;
             Cliente cliente = new Cliente("victor");
             c.Titular = cliente;
 
-            this.conta = new Conta();
+            this.conta = new ContaPoupanca();
 
             textoTitular.Text = c.Titular.Nome;
             textoNumero.Text = Convert.ToString(c.Numero);
@@ -38,7 +38,7 @@ namespace Banco
             double valorOperacao = Convert.ToDouble(valorDigitado);
             conta.Deposita(valorOperacao);
             textoSaldo.Text = Convert.ToString(this.conta.Saldo);
-            MessageBox.Show("Sucesso");
+            //MessageBox.Show("Sucesso");
         }
 
         private void botaoSaque_Click(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace Banco
             double valorOperacao = Convert.ToDouble(valorDigitado);
             this.conta.Saca(valorOperacao);
             textoSaldo.Text = Convert.ToString(this.conta.Saldo);
-            MessageBox.Show("Sucesso");
+            //MessageBox.Show("Sucesso");
         }
     }
 }
