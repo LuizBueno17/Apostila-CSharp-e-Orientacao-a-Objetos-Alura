@@ -8,9 +8,9 @@ namespace Banco
         public double Saldo { get; private set; }
         internal Cliente Titular { get; set; }
 
-        internal void Deposita(double valorOperacao)
+        internal void Deposita(double valor)
         {
-            this.Saldo += valorOperacao;
+            this.Saldo += valor;
         }
         public void Saca(double valor)
         {

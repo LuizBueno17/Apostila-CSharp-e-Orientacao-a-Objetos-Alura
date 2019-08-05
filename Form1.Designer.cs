@@ -32,7 +32,7 @@
             this.textoNumero = new System.Windows.Forms.TextBox();
             this.textoSaldo = new System.Windows.Forms.TextBox();
             this.textoValor = new System.Windows.Forms.TextBox();
-            this.botaoDeposito = new System.Windows.Forms.Button();
+            this.botaoDeposita = new System.Windows.Forms.Button();
             this.labelTitular = new System.Windows.Forms.Label();
             this.labelNumeroConta = new System.Windows.Forms.Label();
             this.labelSaldo = new System.Windows.Forms.Label();
@@ -67,15 +67,15 @@
             this.textoValor.Size = new System.Drawing.Size(100, 22);
             this.textoValor.TabIndex = 3;
             // 
-            // botaoDeposito
+            // botaoDeposita
             // 
-            this.botaoDeposito.Location = new System.Drawing.Point(1053, 92);
-            this.botaoDeposito.Name = "botaoDeposito";
-            this.botaoDeposito.Size = new System.Drawing.Size(100, 23);
-            this.botaoDeposito.TabIndex = 4;
-            this.botaoDeposito.Text = "Deposita";
-            this.botaoDeposito.UseVisualStyleBackColor = true;
-            this.botaoDeposito.Click += new System.EventHandler(this.Deposita_Click);
+            this.botaoDeposita.Location = new System.Drawing.Point(1053, 92);
+            this.botaoDeposita.Name = "botaoDeposita";
+            this.botaoDeposita.Size = new System.Drawing.Size(100, 23);
+            this.botaoDeposita.TabIndex = 4;
+            this.botaoDeposita.Text = "Deposita";
+            this.botaoDeposita.UseVisualStyleBackColor = true;
+            this.botaoDeposita.Click += new System.EventHandler(this.botaoDeposita_Click);
             // 
             // labelTitular
             // 
@@ -112,7 +112,7 @@
             this.botaoSaque.TabIndex = 8;
             this.botaoSaque.Text = "Saca";
             this.botaoSaque.UseVisualStyleBackColor = true;
-            this.botaoSaque.Click += new System.EventHandler(this.BotaoSaque_Click);
+            this.botaoSaque.Click += new System.EventHandler(this.botaoSaque_Click);
             // 
             // Form1
             // 
@@ -123,7 +123,7 @@
             this.Controls.Add(this.labelSaldo);
             this.Controls.Add(this.labelNumeroConta);
             this.Controls.Add(this.labelTitular);
-            this.Controls.Add(this.botaoDeposito);
+            this.Controls.Add(this.botaoDeposita);
             this.Controls.Add(this.textoValor);
             this.Controls.Add(this.textoSaldo);
             this.Controls.Add(this.textoNumero);
@@ -142,7 +142,7 @@
         private System.Windows.Forms.TextBox textoNumero;
         private System.Windows.Forms.TextBox textoSaldo;
         private System.Windows.Forms.TextBox textoValor;
-        private System.Windows.Forms.Button botaoDeposito;
+        private System.Windows.Forms.Button botaoDeposita;
         private System.Windows.Forms.Label labelTitular;
         private System.Windows.Forms.Label labelNumeroConta;
         private System.Windows.Forms.Label labelSaldo;

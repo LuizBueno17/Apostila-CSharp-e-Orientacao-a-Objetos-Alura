@@ -12,7 +12,7 @@ namespace Banco
 {
     public partial class Form1 : Form
     {
-        private Conta c;
+        private Conta conta;
         public Form1()
         {
             InitializeComponent();
@@ -25,28 +25,28 @@ namespace Banco
             Cliente cliente = new Cliente("victor");
             c.Titular = cliente;
 
-            this.c = new Conta();
+            this.conta = new Conta();
 
             textoTitular.Text = c.Titular.Nome;
             textoNumero.Text = Convert.ToString(c.Numero);
             textoSaldo.Text = Convert.ToString(c.Saldo);
         }
 
-        private void Deposita_Click(object sender, EventArgs e)
+        private void botaoDeposita_Click(object sender, EventArgs e)
         {
             string valorDigitado = textoValor.Text;
             double valorOperacao = Convert.ToDouble(valorDigitado);
-            c.Deposita(valorOperacao);
-            textoSaldo.Text = Convert.ToString(this.c.Saldo);
+            conta.Deposita(valorOperacao);
+            textoSaldo.Text = Convert.ToString(this.conta.Saldo);
             MessageBox.Show("Sucesso");
         }
 
-        private void BotaoSaque_Click(object sender, EventArgs e)
+        private void botaoSaque_Click(object sender, EventArgs e)
         {
             string valorDigitado = textoValor.Text;
             double valorOperacao = Convert.ToDouble(valorDigitado);
-            this.c.Saca(valorOperacao);
-            textoSaldo.Text = Convert.ToString(this.c.Saldo);
+            this.conta.Saca(valorOperacao);
+            textoSaldo.Text = Convert.ToString(this.conta.Saldo);
             MessageBox.Show("Sucesso");
         }
     }
