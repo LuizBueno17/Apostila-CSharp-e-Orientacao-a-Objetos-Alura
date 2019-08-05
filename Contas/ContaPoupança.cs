@@ -8,7 +8,7 @@ namespace Banco
 {
     public class ContaPoupanca : Conta
     {
-        public override void Saca(double valor)
+        internal override void Saca(double valor)
         {
             base.Saca(valor + 0.10);
         }

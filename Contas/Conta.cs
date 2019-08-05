@@ -12,7 +12,7 @@ namespace Banco
         {
             this.Saldo += valor;
         }
-        public virtual void Saca(double valor)
+        internal virtual void Saca(double valor)
         {
             this.Saldo -= valor;
         }
