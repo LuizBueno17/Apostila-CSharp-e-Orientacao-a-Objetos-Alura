@@ -37,41 +37,44 @@
             this.labelNumeroConta = new System.Windows.Forms.Label();
             this.labelSaldo = new System.Windows.Forms.Label();
             this.botaoSaque = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textoTitular
             // 
-            this.textoTitular.Location = new System.Drawing.Point(548, 67);
+            this.textoTitular.Location = new System.Drawing.Point(141, 43);
             this.textoTitular.Name = "textoTitular";
-            this.textoTitular.Size = new System.Drawing.Size(310, 22);
+            this.textoTitular.Size = new System.Drawing.Size(156, 22);
             this.textoTitular.TabIndex = 0;
             // 
             // textoNumero
             // 
-            this.textoNumero.Location = new System.Drawing.Point(548, 95);
+            this.textoNumero.Location = new System.Drawing.Point(141, 71);
             this.textoNumero.Name = "textoNumero";
-            this.textoNumero.Size = new System.Drawing.Size(310, 22);
+            this.textoNumero.Size = new System.Drawing.Size(156, 22);
             this.textoNumero.TabIndex = 1;
             // 
             // textoSaldo
             // 
-            this.textoSaldo.Location = new System.Drawing.Point(548, 123);
+            this.textoSaldo.Location = new System.Drawing.Point(141, 99);
             this.textoSaldo.Name = "textoSaldo";
-            this.textoSaldo.Size = new System.Drawing.Size(310, 22);
+            this.textoSaldo.Size = new System.Drawing.Size(156, 22);
             this.textoSaldo.TabIndex = 2;
             // 
             // textoValor
             // 
-            this.textoValor.Location = new System.Drawing.Point(1053, 121);
+            this.textoValor.Location = new System.Drawing.Point(141, 127);
             this.textoValor.Name = "textoValor";
-            this.textoValor.Size = new System.Drawing.Size(100, 22);
+            this.textoValor.Size = new System.Drawing.Size(156, 22);
             this.textoValor.TabIndex = 3;
             // 
             // botaoDeposita
             // 
-            this.botaoDeposita.Location = new System.Drawing.Point(1053, 92);
+            this.botaoDeposita.Location = new System.Drawing.Point(222, 155);
             this.botaoDeposita.Name = "botaoDeposita";
-            this.botaoDeposita.Size = new System.Drawing.Size(100, 23);
+            this.botaoDeposita.Size = new System.Drawing.Size(75, 23);
             this.botaoDeposita.TabIndex = 4;
             this.botaoDeposita.Text = "Deposita";
             this.botaoDeposita.UseVisualStyleBackColor = true;
@@ -80,7 +83,7 @@
             // labelTitular
             // 
             this.labelTitular.AutoSize = true;
-            this.labelTitular.Location = new System.Drawing.Point(494, 70);
+            this.labelTitular.Location = new System.Drawing.Point(87, 46);
             this.labelTitular.Name = "labelTitular";
             this.labelTitular.Size = new System.Drawing.Size(48, 17);
             this.labelTitular.TabIndex = 5;
@@ -89,7 +92,7 @@
             // labelNumeroConta
             // 
             this.labelNumeroConta.AutoSize = true;
-            this.labelNumeroConta.Location = new System.Drawing.Point(425, 98);
+            this.labelNumeroConta.Location = new System.Drawing.Point(18, 74);
             this.labelNumeroConta.Name = "labelNumeroConta";
             this.labelNumeroConta.Size = new System.Drawing.Size(117, 17);
             this.labelNumeroConta.TabIndex = 6;
@@ -98,7 +101,7 @@
             // labelSaldo
             // 
             this.labelSaldo.AutoSize = true;
-            this.labelSaldo.Location = new System.Drawing.Point(498, 126);
+            this.labelSaldo.Location = new System.Drawing.Point(91, 102);
             this.labelSaldo.Name = "labelSaldo";
             this.labelSaldo.Size = new System.Drawing.Size(44, 17);
             this.labelSaldo.TabIndex = 7;
@@ -106,7 +109,7 @@
             // 
             // botaoSaque
             // 
-            this.botaoSaque.Location = new System.Drawing.Point(943, 92);
+            this.botaoSaque.Location = new System.Drawing.Point(141, 155);
             this.botaoSaque.Name = "botaoSaque";
             this.botaoSaque.Size = new System.Drawing.Size(75, 23);
             this.botaoSaque.TabIndex = 8;
@@ -114,25 +117,46 @@
             this.botaoSaque.UseVisualStyleBackColor = true;
             this.botaoSaque.Click += new System.EventHandler(this.botaoSaque_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.labelTitular);
+            this.groupBox1.Controls.Add(this.textoValor);
+            this.groupBox1.Controls.Add(this.botaoSaque);
+            this.groupBox1.Controls.Add(this.botaoDeposita);
+            this.groupBox1.Controls.Add(this.textoTitular);
+            this.groupBox1.Controls.Add(this.labelSaldo);
+            this.groupBox1.Controls.Add(this.textoNumero);
+            this.groupBox1.Controls.Add(this.labelNumeroConta);
+            this.groupBox1.Controls.Add(this.textoSaldo);
+            this.groupBox1.Location = new System.Drawing.Point(22, 17);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(322, 214);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Conta";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 130);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Valor da operação";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1461, 736);
-            this.Controls.Add(this.botaoSaque);
-            this.Controls.Add(this.labelSaldo);
-            this.Controls.Add(this.labelNumeroConta);
-            this.Controls.Add(this.labelTitular);
-            this.Controls.Add(this.botaoDeposita);
-            this.Controls.Add(this.textoValor);
-            this.Controls.Add(this.textoSaldo);
-            this.Controls.Add(this.textoNumero);
-            this.Controls.Add(this.textoTitular);
+            this.ClientSize = new System.Drawing.Size(726, 701);
+            this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -147,6 +171,8 @@
         private System.Windows.Forms.Label labelNumeroConta;
         private System.Windows.Forms.Label labelSaldo;
         private System.Windows.Forms.Button botaoSaque;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
