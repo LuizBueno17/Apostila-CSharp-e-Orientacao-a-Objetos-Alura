@@ -49,6 +49,7 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="Contas\Conta.cs" />
     <Compile Include="Contas\ContaPoupança.cs" />
+    <Compile Include="Contas\TotalizadorDeContas.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
