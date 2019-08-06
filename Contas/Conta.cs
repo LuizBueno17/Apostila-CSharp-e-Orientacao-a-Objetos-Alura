@@ -16,5 +16,10 @@ namespace Banco
         {
             this.Saldo -= valor;
         }
+        internal virtual void Transfere(double valor, Conta conta)
+        {
+            this.Saldo -= valor;
+            conta.Saldo += valor;
+        }
     }
 }

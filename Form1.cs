@@ -48,6 +48,7 @@ namespace Banco
             foreach (Conta conta in contas)
             {
                 comboContas.Items.Add(conta.Titular.Nome);
+                comboContaRecebeTransferencia.Items.Add(conta.Titular.Nome);
             }
 
             //TotalizadorDeContas totalizadorDeContas = new TotalizadorDeContas();
@@ -67,7 +68,7 @@ namespace Banco
 
         private void botaoDeposita_Click(object sender, EventArgs e)
         {
-            int indice = Convert.ToInt32(textoIndice.Text);
+            int indice = comboContas.SelectedIndex;
             Conta selecionada = this.contas[indice];
             double valor = Convert.ToDouble(textoValor.Text);
             selecionada.Deposita(valor);
@@ -76,22 +77,12 @@ namespace Banco
 
         private void botaoSaque_Click(object sender, EventArgs e)
         {
-            int indice = Convert.ToInt32(textoIndice.Text);
+            int indice = comboContas.SelectedIndex;
             Conta selecionada = this.contas[indice];
             double valor = Convert.ToDouble(textoValor.Text);
             selecionada.Saca(valor);
             textoSaldo.Text = Convert.ToString(selecionada.Saldo);
         }
-
-        private void BotaoBusca_Click(object sender, EventArgs e)
-        {
-            int indice = Convert.ToInt32(textoIndice.Text);
-            Conta selecionada = this.contas[indice];
-            textoNumero.Text = Convert.ToString(selecionada.Numero);
-            textoTitular.Text = selecionada.Titular.Nome;
-            textoSaldo.Text = Convert.ToString(selecionada.Saldo);
-        }
-
         private void ComboContas_SelectedIndexChanged(object sender, EventArgs e)
         {
             int indice = comboContas.SelectedIndex;
@@ -99,6 +90,28 @@ namespace Banco
             textoTitular.Text = selecionada.Titular.Nome;
             textoSaldo.Text = Convert.ToString(selecionada.Saldo);
             textoNumero.Text = Convert.ToString(selecionada.Numero);
+        }
+
+        private void BotaoTransfere_Click(object sender, EventArgs e)
+        {
+            int indice = comboContas.SelectedIndex;
+            Conta selecionada = this.contas[indice];
+            int indiceTransferencia = comboContaRecebeTransferencia.SelectedIndex;
+            Conta recebeTransferencia = this.contas[indiceTransferencia];
+
+            double valor = Convert.ToDouble(textoValor.Text);
+            selecionada.Transfere(valor, recebeTransferencia);
+            textoSaldo.Text = Convert.ToString(selecionada.Saldo);
+            textoSaldoTransferencia.Text = Convert.ToString(recebeTransferencia.Saldo);
+        }
+
+        private void ComboContaRecebeTransferencia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indice = comboContaRecebeTransferencia.SelectedIndex;
+            Conta selecionada = contas[indice];
+            textoTitularTransferencia.Text = selecionada.Titular.Nome;
+            textoSaldoTransferencia.Text = Convert.ToString(selecionada.Saldo);
+            textoNumeroTransferencia.Text = Convert.ToString(selecionada.Numero);
         }
     }
 }
