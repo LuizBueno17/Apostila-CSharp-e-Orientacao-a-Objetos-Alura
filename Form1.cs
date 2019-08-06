@@ -45,6 +45,11 @@ namespace Banco
             this.contas[2].Titular = new Cliente("osni");
             this.contas[2].Numero = 3;
 
+            foreach (Conta conta in contas)
+            {
+                comboContas.Items.Add(conta.Titular.Nome);
+            }
+
             //TotalizadorDeContas totalizadorDeContas = new TotalizadorDeContas();
 
             //Conta c1 = new ContaPoupanca();
@@ -85,6 +90,15 @@ namespace Banco
             textoNumero.Text = Convert.ToString(selecionada.Numero);
             textoTitular.Text = selecionada.Titular.Nome;
             textoSaldo.Text = Convert.ToString(selecionada.Saldo);
+        }
+
+        private void ComboContas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indice = comboContas.SelectedIndex;
+            Conta selecionada = contas[indice];
+            textoTitular.Text = selecionada.Titular.Nome;
+            textoSaldo.Text = Convert.ToString(selecionada.Saldo);
+            textoNumero.Text = Convert.ToString(selecionada.Numero);
         }
     }
 }

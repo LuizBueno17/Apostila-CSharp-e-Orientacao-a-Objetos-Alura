@@ -43,6 +43,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textoIndice = new System.Windows.Forms.TextBox();
             this.botaoBusca = new System.Windows.Forms.Button();
+            this.comboContas = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -152,6 +153,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.comboContas);
             this.groupBox2.Controls.Add(this.botaoBusca);
             this.groupBox2.Controls.Add(this.textoIndice);
             this.groupBox2.Controls.Add(this.label2);
@@ -165,7 +167,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 55);
+            this.label2.Location = new System.Drawing.Point(26, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 17);
             this.label2.TabIndex = 0;
@@ -173,20 +175,30 @@
             // 
             // textoIndice
             // 
-            this.textoIndice.Location = new System.Drawing.Point(141, 52);
+            this.textoIndice.Location = new System.Drawing.Point(141, 22);
             this.textoIndice.Name = "textoIndice";
             this.textoIndice.Size = new System.Drawing.Size(75, 22);
             this.textoIndice.TabIndex = 1;
             // 
             // botaoBusca
             // 
-            this.botaoBusca.Location = new System.Drawing.Point(222, 52);
+            this.botaoBusca.Location = new System.Drawing.Point(222, 21);
             this.botaoBusca.Name = "botaoBusca";
             this.botaoBusca.Size = new System.Drawing.Size(75, 23);
             this.botaoBusca.TabIndex = 2;
             this.botaoBusca.Text = "Buscar";
             this.botaoBusca.UseVisualStyleBackColor = true;
             this.botaoBusca.Click += new System.EventHandler(this.BotaoBusca_Click);
+            // 
+            // comboContas
+            // 
+            this.comboContas.FormattingEnabled = true;
+            this.comboContas.Location = new System.Drawing.Point(141, 59);
+            this.comboContas.Name = "comboContas";
+            this.comboContas.Size = new System.Drawing.Size(156, 24);
+            this.comboContas.TabIndex = 11;
+            this.comboContas.Text = "Escolha a conta";
+            this.comboContas.SelectedIndexChanged += new System.EventHandler(this.ComboContas_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -223,6 +235,7 @@
         private System.Windows.Forms.Button botaoBusca;
         private System.Windows.Forms.TextBox textoIndice;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboContas;
     }
 }
 
