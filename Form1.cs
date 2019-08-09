@@ -1,5 +1,6 @@
 ﻿using Banco.Contas;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,19 +15,18 @@ namespace Banco
     public partial class Form1 : Form
     {
         private Conta conta;
-        private Conta[] contas;
-        private int numeroDeContas;
+        private List<Conta> contas;
+        private int numeroDeContas = 0;
         public Form1()
         {
             InitializeComponent();
         }
         public void AdicionaConta(Conta conta)
         {
-            this.contas[this.numeroDeContas] = conta;
+            contas.Add(conta);
             this.numeroDeContas++;
-            comboContas.Items.Add("titular: " + conta.Titular.Nome);
+            comboContas.Items.Add(conta.Titular.Nome);
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             Conta c = new ContaPoupanca();
@@ -40,7 +40,7 @@ namespace Banco
             textoNumero.Text = Convert.ToString(c.Numero);
             textoSaldo.Text = Convert.ToString(c.Saldo);
 
-            contas = new Conta[10];
+            contas = new List<Conta>();
 
             Conta c1 = new Conta();
             c1.Titular = new Cliente("victor");
@@ -54,26 +54,6 @@ namespace Banco
             c3.Titular = new Cliente("osni");
             c3.Numero = 3;
             this.AdicionaConta(c3);
-
-            foreach (Conta conta in contas)
-            {
-                comboContas.Items.Add(conta.Titular.Nome);
-                comboContaRecebeTransferencia.Items.Add(conta.Titular.Nome);
-            }
-
-            //TotalizadorDeContas totalizadorDeContas = new TotalizadorDeContas();
-
-            //Conta c1 = new ContaPoupanca();
-            //c1.Deposita(100.0);
-            //c1.Saca(50.0);
-            //totalizadorDeContas.Soma(c1);
-            //MessageBox.Show("conta poupança = " + c1.Saldo);
-            //Conta c2 = new ContaCorrente();
-            //c2.Deposita(100.0);
-            //c2.Saca(50.0);
-            //totalizadorDeContas.Soma(c2);
-            //MessageBox.Show("conta = " + c2.Saldo);
-            //MessageBox.Show("Saldo total das contas c1 e c2 = " + totalizadorDeContas.ValorTotal);
         }
 
         private void botaoDeposita_Click(object sender, EventArgs e)
@@ -126,7 +106,7 @@ namespace Banco
 
         private void BotaoNovaConta_Click(object sender, EventArgs e)
         {
-            FormCadastroConta formularioDeCadastro = new FormCadastroConta();
+            FormCadastroConta formularioDeCadastro = new FormCadastroConta(this);
             formularioDeCadastro.ShowDialog();
         }
     }
