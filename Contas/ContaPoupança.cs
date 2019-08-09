@@ -8,9 +8,13 @@ namespace Banco
 {
     public class ContaPoupanca : Conta
     {
+        internal override void Deposita(double valor)
+        {
+            this.setSaldo(this.Saldo + (valor));
+        }
         internal override void Saca(double valor)
         {
-            base.Saca(valor + 0.10);
+            this.setSaldo(this.Saldo - (valor + 0.10));
         }
     }
 }
