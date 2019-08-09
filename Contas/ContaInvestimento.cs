@@ -1,26 +1,25 @@
-﻿using Banco.Contas;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Banco
+namespace Banco.Contas
 {
-    public class ContaPoupanca : Conta, ITributavel
+    class ContaInvestimento : Conta, ITributavel
     {
         public double CalculaTributo()
         {
-            return this.Saldo * 0.02;
+            return this.Saldo * 0.03;
         }
-
         internal override void Deposita(double valor)
         {
             this.setSaldo(this.Saldo + (valor));
         }
+
         internal override void Saca(double valor)
         {
-            this.setSaldo(this.Saldo - (valor + 0.10));
+            this.setSaldo(this.Saldo - (valor));
         }
     }
 }

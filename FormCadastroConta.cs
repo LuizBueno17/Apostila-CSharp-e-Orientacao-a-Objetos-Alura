@@ -27,9 +27,12 @@ namespace Banco
             {
                 novaConta = new ContaCorrente();
             }
-            else
+            else if (tipoConta == "Conta Poupança")
             {
                 novaConta = new ContaPoupanca();
+            } else
+            {
+                novaConta = new ContaInvestimento();
             }
 
             novaConta.Titular = new Cliente(textoCadastraTitular.Text);

@@ -83,7 +83,8 @@
             this.comboTipoConta.FormattingEnabled = true;
             this.comboTipoConta.Items.AddRange(new object[] {
             "Conta Poupança",
-            "Conta Corrente"});
+            "Conta Corrente",
+            "Conta de Investimentos"});
             this.comboTipoConta.Location = new System.Drawing.Point(78, 87);
             this.comboTipoConta.Name = "comboTipoConta";
             this.comboTipoConta.Size = new System.Drawing.Size(210, 24);
@@ -104,7 +105,6 @@
             this.Controls.Add(this.textoTitular);
             this.Name = "FormCadastroConta";
             this.Text = "FormCadastroConta";
-            //this.Load += new System.EventHandler(this.FormCadastroConta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
