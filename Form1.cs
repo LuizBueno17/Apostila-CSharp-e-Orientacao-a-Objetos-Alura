@@ -40,17 +40,20 @@ namespace Banco
             textoNumero.Text = Convert.ToString(c.Numero);
             textoSaldo.Text = Convert.ToString(c.Saldo);
 
-            contas = new Conta[3];
+            contas = new Conta[10];
 
-            this.contas[0] = new Conta();
-            this.contas[0].Titular = new Cliente("victor");
-            this.contas[0].Numero = 1;
-            this.contas[1] = new ContaPoupanca();
-            this.contas[1].Titular = new Cliente("mauricio");
-            this.contas[1].Numero = 2;
-            this.contas[2] = new ContaCorrente();
-            this.contas[2].Titular = new Cliente("osni");
-            this.contas[2].Numero = 3;
+            Conta c1 = new Conta();
+            c1.Titular = new Cliente("victor");
+            c1.Numero = 1;
+            this.AdicionaConta(c1);
+            Conta c2 = new ContaPoupanca();
+            c2.Titular = new Cliente("mauricio");
+            c2.Numero = 2;
+            this.AdicionaConta(c2);
+            Conta c3 = new ContaCorrente();
+            c3.Titular = new Cliente("osni");
+            c3.Numero = 3;
+            this.AdicionaConta(c3);
 
             foreach (Conta conta in contas)
             {
