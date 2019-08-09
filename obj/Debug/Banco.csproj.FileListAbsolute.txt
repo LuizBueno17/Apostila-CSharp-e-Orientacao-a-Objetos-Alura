@@ -8,3 +8,4 @@ C:\Users\luizg\Documents\Codes\Banco\obj\Debug\Banco.csproj.GenerateResource.cac
 C:\Users\luizg\Documents\Codes\Banco\obj\Debug\Banco.csproj.CoreCompileInputs.cache
 C:\Users\luizg\Documents\Codes\Banco\obj\Debug\Banco.exe
 C:\Users\luizg\Documents\Codes\Banco\obj\Debug\Banco.pdb
+C:\Users\luizg\Documents\Codes\Banco\obj\Debug\Banco.FormCadastroConta.resources

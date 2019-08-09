@@ -38,18 +38,19 @@
             this.labelSaldo = new System.Windows.Forms.Label();
             this.botaoSaque = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.botaoTransfere = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboContas = new System.Windows.Forms.ComboBox();
             this.contaTransferencia = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textoTitularTransferencia = new System.Windows.Forms.TextBox();
-            this.textoNumeroTransferencia = new System.Windows.Forms.TextBox();
-            this.textoSaldoTransferencia = new System.Windows.Forms.TextBox();
             this.comboContaRecebeTransferencia = new System.Windows.Forms.ComboBox();
-            this.botaoTransfere = new System.Windows.Forms.Button();
+            this.textoSaldoTransferencia = new System.Windows.Forms.TextBox();
+            this.textoNumeroTransferencia = new System.Windows.Forms.TextBox();
+            this.textoTitularTransferencia = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.botaoNovaConta = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.contaTransferencia.SuspendLayout();
@@ -145,10 +146,20 @@
             this.groupBox1.Controls.Add(this.textoSaldo);
             this.groupBox1.Location = new System.Drawing.Point(29, 99);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(322, 214);
+            this.groupBox1.Size = new System.Drawing.Size(322, 183);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Conta";
+            // 
+            // botaoTransfere
+            // 
+            this.botaoTransfere.Location = new System.Drawing.Point(33, 155);
+            this.botaoTransfere.Name = "botaoTransfere";
+            this.botaoTransfere.Size = new System.Drawing.Size(102, 23);
+            this.botaoTransfere.TabIndex = 10;
+            this.botaoTransfere.Text = "Transfere";
+            this.botaoTransfere.UseVisualStyleBackColor = true;
+            this.botaoTransfere.Click += new System.EventHandler(this.BotaoTransfere_Click);
             // 
             // label1
             // 
@@ -195,54 +206,6 @@
             this.contaTransferencia.TabStop = false;
             this.contaTransferencia.Text = "Conta a transferir";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(87, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Titular";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 115);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 17);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Número da conta";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(91, 144);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 17);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Saldo";
-            // 
-            // textoTitularTransferencia
-            // 
-            this.textoTitularTransferencia.Location = new System.Drawing.Point(141, 85);
-            this.textoTitularTransferencia.Name = "textoTitularTransferencia";
-            this.textoTitularTransferencia.Size = new System.Drawing.Size(156, 22);
-            this.textoTitularTransferencia.TabIndex = 3;
-            // 
-            // textoNumeroTransferencia
-            // 
-            this.textoNumeroTransferencia.Location = new System.Drawing.Point(141, 113);
-            this.textoNumeroTransferencia.Name = "textoNumeroTransferencia";
-            this.textoNumeroTransferencia.Size = new System.Drawing.Size(156, 22);
-            this.textoNumeroTransferencia.TabIndex = 4;
-            // 
-            // textoSaldoTransferencia
-            // 
-            this.textoSaldoTransferencia.Location = new System.Drawing.Point(141, 141);
-            this.textoSaldoTransferencia.Name = "textoSaldoTransferencia";
-            this.textoSaldoTransferencia.Size = new System.Drawing.Size(156, 22);
-            this.textoSaldoTransferencia.TabIndex = 5;
-            // 
             // comboContaRecebeTransferencia
             // 
             this.comboContaRecebeTransferencia.FormattingEnabled = true;
@@ -253,21 +216,70 @@
             this.comboContaRecebeTransferencia.Text = "Escolha a conta";
             this.comboContaRecebeTransferencia.SelectedIndexChanged += new System.EventHandler(this.ComboContaRecebeTransferencia_SelectedIndexChanged);
             // 
-            // botaoTransfere
+            // textoSaldoTransferencia
             // 
-            this.botaoTransfere.Location = new System.Drawing.Point(52, 155);
-            this.botaoTransfere.Name = "botaoTransfere";
-            this.botaoTransfere.Size = new System.Drawing.Size(83, 23);
-            this.botaoTransfere.TabIndex = 10;
-            this.botaoTransfere.Text = "Transfere";
-            this.botaoTransfere.UseVisualStyleBackColor = true;
-            this.botaoTransfere.Click += new System.EventHandler(this.BotaoTransfere_Click);
+            this.textoSaldoTransferencia.Location = new System.Drawing.Point(141, 141);
+            this.textoSaldoTransferencia.Name = "textoSaldoTransferencia";
+            this.textoSaldoTransferencia.Size = new System.Drawing.Size(156, 22);
+            this.textoSaldoTransferencia.TabIndex = 5;
+            // 
+            // textoNumeroTransferencia
+            // 
+            this.textoNumeroTransferencia.Location = new System.Drawing.Point(141, 113);
+            this.textoNumeroTransferencia.Name = "textoNumeroTransferencia";
+            this.textoNumeroTransferencia.Size = new System.Drawing.Size(156, 22);
+            this.textoNumeroTransferencia.TabIndex = 4;
+            // 
+            // textoTitularTransferencia
+            // 
+            this.textoTitularTransferencia.Location = new System.Drawing.Point(141, 85);
+            this.textoTitularTransferencia.Name = "textoTitularTransferencia";
+            this.textoTitularTransferencia.Size = new System.Drawing.Size(156, 22);
+            this.textoTitularTransferencia.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(91, 144);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 17);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Saldo";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 115);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 17);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Número da conta";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(87, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Titular";
+            // 
+            // botaoNovaConta
+            // 
+            this.botaoNovaConta.Location = new System.Drawing.Point(62, 288);
+            this.botaoNovaConta.Name = "botaoNovaConta";
+            this.botaoNovaConta.Size = new System.Drawing.Size(102, 23);
+            this.botaoNovaConta.TabIndex = 11;
+            this.botaoNovaConta.Text = "Nova Conta";
+            this.botaoNovaConta.UseVisualStyleBackColor = true;
+            this.botaoNovaConta.Click += new System.EventHandler(this.BotaoNovaConta_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 701);
+            this.Controls.Add(this.botaoNovaConta);
             this.Controls.Add(this.contaTransferencia);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -307,6 +319,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button botaoTransfere;
+        private System.Windows.Forms.Button botaoNovaConta;
     }
 }
 

@@ -15,9 +15,16 @@ namespace Banco
     {
         private Conta conta;
         private Conta[] contas;
+        private int numeroDeContas;
         public Form1()
         {
             InitializeComponent();
+        }
+        public void AdicionaConta(Conta conta)
+        {
+            this.contas[this.numeroDeContas] = conta;
+            this.numeroDeContas++;
+            comboContas.Items.Add("titular: " + conta.Titular.Nome);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -112,6 +119,12 @@ namespace Banco
             textoTitularTransferencia.Text = selecionada.Titular.Nome;
             textoSaldoTransferencia.Text = Convert.ToString(selecionada.Saldo);
             textoNumeroTransferencia.Text = Convert.ToString(selecionada.Numero);
+        }
+
+        private void BotaoNovaConta_Click(object sender, EventArgs e)
+        {
+            FormCadastroConta formularioDeCadastro = new FormCadastroConta();
+            formularioDeCadastro.ShowDialog();
         }
     }
 }
