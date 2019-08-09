@@ -51,7 +51,8 @@
     <Compile Include="Contas\ContaCorrente.cs" />
     <Compile Include="Contas\ContaInvestimento.cs" />
     <Compile Include="Contas\ContaPoupança.cs" />
-    <Compile Include="Contas\ITributavel.cs" />
+    <Compile Include="Contas\SeguroDeVida.cs" />
+    <Compile Include="Interfaces\ITributavel.cs" />
     <Compile Include="Contas\TotalizadorDeContas.cs" />
     <Compile Include="Contas\TotalizadorDeTributos.cs" />
     <Compile Include="Form1.cs">

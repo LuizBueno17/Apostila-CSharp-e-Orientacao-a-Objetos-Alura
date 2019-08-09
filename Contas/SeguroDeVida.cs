@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Banco.Contas
 {
-    public class TotalizadorDeTributos
+    public class SeguroDeVida : ITributavel
     {
-        public double Total { get; private set; }
-        public void Adiciona(ITributavel t)
+        public double CalculaTributo()
         {
-            this.Total += t.CalculaTributo();
+            return 42.0;
         }
     }
 }

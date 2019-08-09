@@ -51,6 +51,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.botaoNovaConta = new System.Windows.Forms.Button();
+            this.botaoImpostos = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.contaTransferencia.SuspendLayout();
@@ -133,6 +134,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.botaoImpostos);
             this.groupBox1.Controls.Add(this.botaoTransfere);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.labelTitular);
@@ -146,7 +148,7 @@
             this.groupBox1.Controls.Add(this.textoSaldo);
             this.groupBox1.Location = new System.Drawing.Point(29, 99);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(322, 183);
+            this.groupBox1.Size = new System.Drawing.Size(322, 220);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Conta";
@@ -266,13 +268,23 @@
             // 
             // botaoNovaConta
             // 
-            this.botaoNovaConta.Location = new System.Drawing.Point(62, 288);
+            this.botaoNovaConta.Location = new System.Drawing.Point(62, 325);
             this.botaoNovaConta.Name = "botaoNovaConta";
             this.botaoNovaConta.Size = new System.Drawing.Size(102, 23);
             this.botaoNovaConta.TabIndex = 11;
             this.botaoNovaConta.Text = "Nova Conta";
             this.botaoNovaConta.UseVisualStyleBackColor = true;
             this.botaoNovaConta.Click += new System.EventHandler(this.BotaoNovaConta_Click);
+            // 
+            // botaoImpostos
+            // 
+            this.botaoImpostos.Location = new System.Drawing.Point(33, 189);
+            this.botaoImpostos.Name = "botaoImpostos";
+            this.botaoImpostos.Size = new System.Drawing.Size(183, 23);
+            this.botaoImpostos.TabIndex = 11;
+            this.botaoImpostos.Text = "Calcular Impostos";
+            this.botaoImpostos.UseVisualStyleBackColor = true;
+            this.botaoImpostos.Click += new System.EventHandler(this.BotaoImpostos_Click);
             // 
             // Form1
             // 
@@ -320,6 +332,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button botaoTransfere;
         private System.Windows.Forms.Button botaoNovaConta;
+        private System.Windows.Forms.Button botaoImpostos;
     }
 }
 

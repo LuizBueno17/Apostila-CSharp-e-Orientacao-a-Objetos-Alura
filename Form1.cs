@@ -109,5 +109,20 @@ namespace Banco
             FormCadastroConta formularioDeCadastro = new FormCadastroConta(this);
             formularioDeCadastro.ShowDialog();
         }
+
+        private void BotaoImpostos_Click(object sender, EventArgs e)
+        {
+            TotalizadorDeTributos totalizador = new TotalizadorDeTributos();
+
+            foreach (var conta in contas)
+            {
+                if (conta is ITributavel)
+                {
+                    totalizador.Adiciona(conta as ITributavel);
+                }
+            }
+
+            MessageBox.Show("Total: " + totalizador.Total);
+        }
     }
 }
