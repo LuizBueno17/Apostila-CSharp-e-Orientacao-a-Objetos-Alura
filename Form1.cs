@@ -14,9 +14,7 @@ namespace Banco
 {
     public partial class Form1 : Form
     {
-        private Conta conta;
         private List<Conta> contas;
-        private int numeroDeContas = 0;
         public Form1()
         {
             InitializeComponent();
@@ -24,35 +22,21 @@ namespace Banco
         public void AdicionaConta(Conta conta)
         {
             contas.Add(conta);
-            this.numeroDeContas++;
             comboContas.Items.Add(conta.Titular.Nome);
+            comboContaRecebeTransferencia.Items.Add(conta.Titular.Nome);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            Conta c = new ContaPoupanca();
-            c.Numero = 1;
-            Cliente cliente = new Cliente("victor");
-            c.Titular = cliente;
-
-            this.conta = new ContaPoupanca();
-
-            textoTitular.Text = c.Titular.Nome;
-            textoNumero.Text = Convert.ToString(c.Numero);
-            textoSaldo.Text = Convert.ToString(c.Saldo);
-
             contas = new List<Conta>();
 
             Conta c1 = new ContaPoupanca();
             c1.Titular = new Cliente("victor");
-            c1.Numero = 1;
             this.AdicionaConta(c1);
             Conta c2 = new ContaPoupanca();
             c2.Titular = new Cliente("mauricio");
-            c2.Numero = 2;
             this.AdicionaConta(c2);
             Conta c3 = new ContaCorrente();
             c3.Titular = new Cliente("osni");
-            c3.Numero = 3;
             this.AdicionaConta(c3);
         }
 
@@ -79,7 +63,7 @@ namespace Banco
             Conta selecionada = contas[indice];
             textoTitular.Text = selecionada.Titular.Nome;
             textoSaldo.Text = Convert.ToString(selecionada.Saldo);
-            textoNumero.Text = Convert.ToString(selecionada.Numero);
+            textoNumero.Text = Convert.ToString(selecionada.Numero.ToString("X5"));
         }
 
         private void BotaoTransfere_Click(object sender, EventArgs e)
@@ -101,7 +85,7 @@ namespace Banco
             Conta selecionada = contas[indice];
             textoTitularTransferencia.Text = selecionada.Titular.Nome;
             textoSaldoTransferencia.Text = Convert.ToString(selecionada.Saldo);
-            textoNumeroTransferencia.Text = Convert.ToString(selecionada.Numero);
+            textoNumeroTransferencia.Text = Convert.ToString(selecionada.Numero.ToString("X5"));
         }
 
         private void BotaoNovaConta_Click(object sender, EventArgs e)

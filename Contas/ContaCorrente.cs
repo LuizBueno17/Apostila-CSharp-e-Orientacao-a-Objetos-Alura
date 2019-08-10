@@ -8,16 +8,6 @@ namespace Banco.Contas
 {
     class ContaCorrente : Conta, ITributavel
     {
-        private static int totalDeContas = 0;
-
-        public ContaCorrente()
-        {
-            totalDeContas++;
-        }
-        public static int ProximaConta()
-        {
-            return ContaCorrente.totalDeContas + 1;
-        }
         internal override void Saca(double valor)
         {
             this.setSaldo(this.Saldo - (valor + 0.05));

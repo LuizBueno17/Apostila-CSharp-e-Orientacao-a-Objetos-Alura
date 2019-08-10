@@ -30,21 +30,23 @@ namespace Banco
             else if (tipoConta == "Conta Poupança")
             {
                 novaConta = new ContaPoupanca();
-            } else
+            }
+            else
             {
                 novaConta = new ContaInvestimento();
             }
-
             novaConta.Titular = new Cliente(textoCadastraTitular.Text);
-            novaConta.Numero = Convert.ToInt32(textoCadastraNumero.Text);
-
             this.formPrincipal.AdicionaConta(novaConta);
             this.Close();
         }
-
         private void comboTipoConta_SelectedIndexChanged(object sender, EventArgs e)
         {
             tipoConta = comboTipoConta.SelectedItem.ToString();
+        }
+
+        private void FormCadastroConta_Load(object sender, EventArgs e)
+        {
+            textoCadastroNumero.Text = Convert.ToString(Conta.ProximaConta().ToString("X5"));
         }
     }
 }

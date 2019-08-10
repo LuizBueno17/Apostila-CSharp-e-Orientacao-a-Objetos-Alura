@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.textoTitular = new System.Windows.Forms.Label();
-            this.textoNumero = new System.Windows.Forms.Label();
-            this.textoCadastraNumero = new System.Windows.Forms.TextBox();
             this.textoCadastraTitular = new System.Windows.Forms.TextBox();
             this.botaoCadastro = new System.Windows.Forms.Button();
             this.comboTipoConta = new System.Windows.Forms.ComboBox();
+            this.textoCadastroNumero = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textoTitular
@@ -45,32 +45,16 @@
             this.textoTitular.TabIndex = 0;
             this.textoTitular.Text = "Titular";
             // 
-            // textoNumero
-            // 
-            this.textoNumero.AutoSize = true;
-            this.textoNumero.Location = new System.Drawing.Point(14, 62);
-            this.textoNumero.Name = "textoNumero";
-            this.textoNumero.Size = new System.Drawing.Size(58, 17);
-            this.textoNumero.TabIndex = 1;
-            this.textoNumero.Text = "Número";
-            // 
-            // textoCadastraNumero
-            // 
-            this.textoCadastraNumero.Location = new System.Drawing.Point(78, 59);
-            this.textoCadastraNumero.Name = "textoCadastraNumero";
-            this.textoCadastraNumero.Size = new System.Drawing.Size(210, 22);
-            this.textoCadastraNumero.TabIndex = 2;
-            // 
             // textoCadastraTitular
             // 
             this.textoCadastraTitular.Location = new System.Drawing.Point(78, 31);
             this.textoCadastraTitular.Name = "textoCadastraTitular";
-            this.textoCadastraTitular.Size = new System.Drawing.Size(210, 22);
+            this.textoCadastraTitular.Size = new System.Drawing.Size(253, 22);
             this.textoCadastraTitular.TabIndex = 1;
             // 
             // botaoCadastro
             // 
-            this.botaoCadastro.Location = new System.Drawing.Point(130, 117);
+            this.botaoCadastro.Location = new System.Drawing.Point(182, 89);
             this.botaoCadastro.Name = "botaoCadastro";
             this.botaoCadastro.Size = new System.Drawing.Size(100, 23);
             this.botaoCadastro.TabIndex = 4;
@@ -85,26 +69,43 @@
             "Conta Poupança",
             "Conta Corrente",
             "Conta de Investimentos"});
-            this.comboTipoConta.Location = new System.Drawing.Point(78, 87);
+            this.comboTipoConta.Location = new System.Drawing.Point(152, 59);
             this.comboTipoConta.Name = "comboTipoConta";
-            this.comboTipoConta.Size = new System.Drawing.Size(210, 24);
+            this.comboTipoConta.Size = new System.Drawing.Size(179, 24);
             this.comboTipoConta.TabIndex = 3;
             this.comboTipoConta.Text = "Selecione o tipo da conta";
             this.comboTipoConta.SelectedIndexChanged += new System.EventHandler(this.comboTipoConta_SelectedIndexChanged);
+            // 
+            // textoCadastroNumero
+            // 
+            this.textoCadastroNumero.Location = new System.Drawing.Point(78, 59);
+            this.textoCadastroNumero.Name = "textoCadastroNumero";
+            this.textoCadastroNumero.Size = new System.Drawing.Size(68, 22);
+            this.textoCadastroNumero.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Número";
             // 
             // FormCadastroConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 153);
+            this.ClientSize = new System.Drawing.Size(413, 168);
+            this.Controls.Add(this.textoCadastroNumero);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboTipoConta);
             this.Controls.Add(this.botaoCadastro);
             this.Controls.Add(this.textoCadastraTitular);
-            this.Controls.Add(this.textoCadastraNumero);
-            this.Controls.Add(this.textoNumero);
             this.Controls.Add(this.textoTitular);
             this.Name = "FormCadastroConta";
             this.Text = "FormCadastroConta";
+            this.Load += new System.EventHandler(this.FormCadastroConta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,10 +114,10 @@
         #endregion
 
         private System.Windows.Forms.Label textoTitular;
-        private System.Windows.Forms.Label textoNumero;
-        private System.Windows.Forms.TextBox textoCadastraNumero;
         private System.Windows.Forms.TextBox textoCadastraTitular;
         private System.Windows.Forms.Button botaoCadastro;
         private System.Windows.Forms.ComboBox comboTipoConta;
+        private System.Windows.Forms.TextBox textoCadastroNumero;
+        private System.Windows.Forms.Label label1;
     }
 }
