@@ -14,6 +14,10 @@ namespace Banco.Contas
         }
         internal override void Deposita(double valor)
         {
+            if (valor < 0.0)
+            {
+                throw new Exception("Não é possível depositar um valor negativo!");
+            }
             this.setSaldo(this.Saldo + (valor));
         }
         internal override void Saca(double valor)

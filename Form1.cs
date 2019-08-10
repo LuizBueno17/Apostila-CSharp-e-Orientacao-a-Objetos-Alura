@@ -42,29 +42,36 @@ namespace Banco
 
         private void botaoDeposita_Click(object sender, EventArgs e)
         {
-            int indice = comboContas.SelectedIndex;
-            Conta selecionada = this.contas[indice];
-            double valor = Convert.ToDouble(textoValor.Text);
-            selecionada.Deposita(valor);
-            textoSaldo.Text = Convert.ToString(selecionada.Saldo);
-        }
-
-        private void botaoSaque_Click(object sender, EventArgs e)
-        {
-            int indice = comboContas.SelectedIndex;
-            Conta selecionada = this.contas[indice];
-            double valor = Convert.ToDouble(textoValor.Text);
             try
             {
-                selecionada.Saca(valor);
+                int indice = comboContas.SelectedIndex;
+                Conta selecionada = this.contas[indice];
+                double valor = Convert.ToDouble(textoValor.Text);
+                selecionada.Deposita(valor);
                 textoSaldo.Text = Convert.ToString(selecionada.Saldo);
-                MessageBox.Show("Dinheiro Liberado");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            textoSaldo.Text = Convert.ToString(selecionada.Saldo);
+        }
+
+        private void botaoSaque_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int indice = comboContas.SelectedIndex;
+                Conta selecionada = this.contas[indice];
+                double valor = Convert.ToDouble(textoValor.Text);
+                selecionada.Saca(valor);
+                textoSaldo.Text = Convert.ToString(selecionada.Saldo);
+                MessageBox.Show("Dinheiro Liberado");
+                textoSaldo.Text = Convert.ToString(selecionada.Saldo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void ComboContas_SelectedIndexChanged(object sender, EventArgs e)
         {
