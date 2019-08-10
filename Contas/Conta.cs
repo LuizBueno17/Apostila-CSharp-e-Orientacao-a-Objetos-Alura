@@ -8,6 +8,10 @@ namespace Banco
         public double Saldo { get; private set; }
         internal Cliente Titular { get; set; }
         private static int numeroDeContas = 0;
+        public override string ToString()
+        {
+            return "titular: " + this.Titular.Nome;
+        }
         public Conta()
         {
             numeroDeContas++;

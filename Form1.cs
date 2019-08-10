@@ -22,8 +22,8 @@ namespace Banco
         public void AdicionaConta(Conta conta)
         {
             contas.Add(conta);
-            comboContas.Items.Add(conta.Titular.Nome);
-            comboContaRecebeTransferencia.Items.Add(conta.Titular.Nome);
+            comboContas.Items.Add(conta.ToString());
+            comboContaRecebeTransferencia.Items.Add(conta.ToString());
         }
         private void Form1_Load(object sender, EventArgs e)
         {
