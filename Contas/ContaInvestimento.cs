@@ -16,10 +16,20 @@ namespace Banco.Contas
         {
             this.setSaldo(this.Saldo + (valor));
         }
-
         internal override void Saca(double valor)
         {
-            this.setSaldo(this.Saldo - (valor));
+            if (valor < 0.0)
+            {
+                throw new Exception("Não é possível sacar um valor negativo!");
+            }
+            else if (valor > this.Saldo)
+            {
+                throw new Exception("Valor do saque maior que o saldo");
+            }
+            else
+            {
+                this.setSaldo(this.Saldo - (valor));
+            }
         }
     }
 }

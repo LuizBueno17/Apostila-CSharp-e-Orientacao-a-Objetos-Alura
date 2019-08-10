@@ -54,7 +54,16 @@ namespace Banco
             int indice = comboContas.SelectedIndex;
             Conta selecionada = this.contas[indice];
             double valor = Convert.ToDouble(textoValor.Text);
-            selecionada.Saca(valor);
+            try
+            {
+                selecionada.Saca(valor);
+                textoSaldo.Text = Convert.ToString(selecionada.Saldo);
+                MessageBox.Show("Dinheiro Liberado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             textoSaldo.Text = Convert.ToString(selecionada.Saldo);
         }
         private void ComboContas_SelectedIndexChanged(object sender, EventArgs e)
