@@ -22,8 +22,9 @@ namespace Banco
         public void AdicionaConta(Conta conta)
         {
             contas.Add(conta);
-            comboContas.Items.Add(conta.ToString());
-            comboContaRecebeTransferencia.Items.Add(conta.ToString());
+            comboContas.Items.Add(conta);
+            comboContaRecebeTransferencia.Items.Add(conta);
+            //comboContas.DisplayMember = "Numero";
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -44,8 +45,7 @@ namespace Banco
         {
             try
             {
-                int indice = comboContas.SelectedIndex;
-                Conta selecionada = this.contas[indice];
+                Conta selecionada = (Conta) comboContas.SelectedItem;
                 double valor = Convert.ToDouble(textoValor.Text);
                 selecionada.Deposita(valor);
                 textoSaldo.Text = Convert.ToString(selecionada.Saldo);
@@ -60,12 +60,9 @@ namespace Banco
         {
             try
             {
-                int indice = comboContas.SelectedIndex;
-                Conta selecionada = this.contas[indice];
+                Conta selecionada = (Conta)comboContas.SelectedItem;
                 double valor = Convert.ToDouble(textoValor.Text);
                 selecionada.Saca(valor);
-                textoSaldo.Text = Convert.ToString(selecionada.Saldo);
-                MessageBox.Show("Dinheiro Liberado");
                 textoSaldo.Text = Convert.ToString(selecionada.Saldo);
             }
             catch (Exception ex)
