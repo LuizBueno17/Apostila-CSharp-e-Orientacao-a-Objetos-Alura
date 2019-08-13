@@ -55,6 +55,7 @@
             this.textoBuscaTitular = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.botaoBusca = new System.Windows.Forms.Button();
+            this.botaoRelatorio = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.contaTransferencia.SuspendLayout();
@@ -80,6 +81,7 @@
             this.textoSaldo.Name = "textoSaldo";
             this.textoSaldo.Size = new System.Drawing.Size(156, 22);
             this.textoSaldo.TabIndex = 2;
+            //this.textoSaldo.TextChanged += new System.EventHandler(this.TextoSaldo_TextChanged);
             // 
             // textoValor
             // 
@@ -137,7 +139,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.botaoImpostos);
             this.groupBox1.Controls.Add(this.botaoTransfere);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.labelTitular);
@@ -158,7 +159,7 @@
             // 
             // botaoImpostos
             // 
-            this.botaoImpostos.Location = new System.Drawing.Point(33, 189);
+            this.botaoImpostos.Location = new System.Drawing.Point(168, 410);
             this.botaoImpostos.Name = "botaoImpostos";
             this.botaoImpostos.Size = new System.Drawing.Size(183, 23);
             this.botaoImpostos.TabIndex = 11;
@@ -217,7 +218,7 @@
             this.contaTransferencia.Controls.Add(this.label4);
             this.contaTransferencia.Controls.Add(this.label3);
             this.contaTransferencia.Controls.Add(this.label2);
-            this.contaTransferencia.Location = new System.Drawing.Point(371, 99);
+            this.contaTransferencia.Location = new System.Drawing.Point(377, 184);
             this.contaTransferencia.Name = "contaTransferencia";
             this.contaTransferencia.Size = new System.Drawing.Size(322, 183);
             this.contaTransferencia.TabIndex = 11;
@@ -284,9 +285,9 @@
             // 
             // botaoNovaConta
             // 
-            this.botaoNovaConta.Location = new System.Drawing.Point(62, 410);
+            this.botaoNovaConta.Location = new System.Drawing.Point(29, 410);
             this.botaoNovaConta.Name = "botaoNovaConta";
-            this.botaoNovaConta.Size = new System.Drawing.Size(102, 23);
+            this.botaoNovaConta.Size = new System.Drawing.Size(124, 23);
             this.botaoNovaConta.TabIndex = 11;
             this.botaoNovaConta.Text = "Nova Conta";
             this.botaoNovaConta.UseVisualStyleBackColor = true;
@@ -310,7 +311,7 @@
             // 
             // botaoBusca
             // 
-            this.botaoBusca.Location = new System.Drawing.Point(220, 73);
+            this.botaoBusca.Location = new System.Drawing.Point(220, 74);
             this.botaoBusca.Name = "botaoBusca";
             this.botaoBusca.Size = new System.Drawing.Size(75, 23);
             this.botaoBusca.TabIndex = 14;
@@ -318,11 +319,23 @@
             this.botaoBusca.UseVisualStyleBackColor = true;
             this.botaoBusca.Click += new System.EventHandler(this.BotaoBusca_Click);
             // 
+            // botaoRelatorio
+            // 
+            this.botaoRelatorio.Location = new System.Drawing.Point(29, 439);
+            this.botaoRelatorio.Name = "botaoRelatorio";
+            this.botaoRelatorio.Size = new System.Drawing.Size(124, 23);
+            this.botaoRelatorio.TabIndex = 12;
+            this.botaoRelatorio.Text = "Relatórios";
+            this.botaoRelatorio.UseVisualStyleBackColor = true;
+            this.botaoRelatorio.Click += new System.EventHandler(this.BotaoRelatorio_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 701);
+            this.Controls.Add(this.botaoRelatorio);
+            this.Controls.Add(this.botaoImpostos);
             this.Controls.Add(this.botaoNovaConta);
             this.Controls.Add(this.contaTransferencia);
             this.Controls.Add(this.groupBox2);
@@ -369,6 +382,7 @@
         private System.Windows.Forms.Button botaoBusca;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textoBuscaTitular;
+        private System.Windows.Forms.Button botaoRelatorio;
     }
 }
 

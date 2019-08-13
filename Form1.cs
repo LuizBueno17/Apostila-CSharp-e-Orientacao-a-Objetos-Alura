@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,7 +51,7 @@ namespace Banco
                 Conta selecionada = (Conta) comboContas.SelectedItem;
                 double valor = Convert.ToDouble(textoValor.Text);
                 selecionada.Deposita(valor);
-                textoSaldo.Text = Convert.ToString(selecionada.Saldo);
+                textoSaldo.Text = selecionada.Saldo.ToString("C", CultureInfo.CreateSpecificCulture("pt-BR"));
             }
             catch (Exception ex)
             {
@@ -65,7 +66,7 @@ namespace Banco
                 Conta selecionada = (Conta)comboContas.SelectedItem;
                 double valor = Convert.ToDouble(textoValor.Text);
                 selecionada.Saca(valor);
-                textoSaldo.Text = Convert.ToString(selecionada.Saldo);
+                textoSaldo.Text = selecionada.Saldo.ToString("C", CultureInfo.CreateSpecificCulture("pt-BR"));
             }
             catch (Exception ex)
             {
@@ -77,7 +78,7 @@ namespace Banco
             int indice = comboContas.SelectedIndex;
             Conta selecionada = contas[indice];
             textoTitular.Text = selecionada.Titular.Nome;
-            textoSaldo.Text = Convert.ToString(selecionada.Saldo);
+            textoSaldo.Text = selecionada.Saldo.ToString("C", CultureInfo.CreateSpecificCulture("pt-BR"));
             textoNumero.Text = Convert.ToString(selecionada.Numero.ToString("X5"));
         }
 
@@ -90,8 +91,8 @@ namespace Banco
 
             double valor = Convert.ToDouble(textoValor.Text);
             selecionada.Transfere(valor, recebeTransferencia);
-            textoSaldo.Text = Convert.ToString(selecionada.Saldo);
-            textoSaldoTransferencia.Text = Convert.ToString(recebeTransferencia.Saldo);
+            textoSaldo.Text = selecionada.Saldo.ToString("C", CultureInfo.CreateSpecificCulture("pt-BR"));
+            textoSaldoTransferencia.Text = recebeTransferencia.Saldo.ToString("C", CultureInfo.CreateSpecificCulture("pt-BR"));
         }
 
         private void ComboContaRecebeTransferencia_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,7 +100,7 @@ namespace Banco
             int indice = comboContaRecebeTransferencia.SelectedIndex;
             Conta selecionada = contas[indice];
             textoTitularTransferencia.Text = selecionada.Titular.Nome;
-            textoSaldoTransferencia.Text = Convert.ToString(selecionada.Saldo);
+            textoSaldoTransferencia.Text = selecionada.Saldo.ToString("C", CultureInfo.CreateSpecificCulture("pt-BR"));
             textoNumeroTransferencia.Text = Convert.ToString(selecionada.Numero.ToString("X5"));
         }
 
@@ -132,13 +133,19 @@ namespace Banco
                 Conta conta = dicionario[nomeTitular];
                 textoTitular.Text = conta.Titular.Nome;
                 textoNumero.Text = Convert.ToString(conta.Numero.ToString("X5"));
-                textoSaldo.Text = Convert.ToString(conta.Saldo);
+                textoSaldo.Text = conta.Saldo.ToString("C", CultureInfo.CreateSpecificCulture("pt-BR"));
                 comboContas.SelectedItem = conta;
             }
             catch (Exception)
             {
                 MessageBox.Show("Conta não encontrada");
             }
+        }
+
+        private void BotaoRelatorio_Click(object sender, EventArgs e)
+        {
+            FormRelatorios form = new FormRelatorios(this.contas);
+            form.ShowDialog();
         }
     }
 }

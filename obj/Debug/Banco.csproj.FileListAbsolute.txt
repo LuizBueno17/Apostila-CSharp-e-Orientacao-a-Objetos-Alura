@@ -9,3 +9,4 @@ C:\Users\luizg\Documents\Codes\Banco\obj\Debug\Banco.csproj.CoreCompileInputs.ca
 C:\Users\luizg\Documents\Codes\Banco\obj\Debug\Banco.exe
 C:\Users\luizg\Documents\Codes\Banco\obj\Debug\Banco.pdb
 C:\Users\luizg\Documents\Codes\Banco\obj\Debug\Banco.FormCadastroConta.resources
+C:\Users\luizg\Documents\Codes\Banco\obj\Debug\Banco.FormRelatorios.resources
