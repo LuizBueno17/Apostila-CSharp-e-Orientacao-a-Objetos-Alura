@@ -38,6 +38,7 @@
             this.labelSaldo = new System.Windows.Forms.Label();
             this.botaoSaque = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.botaoImpostos = new System.Windows.Forms.Button();
             this.botaoTransfere = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -51,7 +52,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.botaoNovaConta = new System.Windows.Forms.Button();
-            this.botaoImpostos = new System.Windows.Forms.Button();
+            this.textoBuscaTitular = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.botaoBusca = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.contaTransferencia.SuspendLayout();
@@ -146,12 +149,22 @@
             this.groupBox1.Controls.Add(this.textoNumero);
             this.groupBox1.Controls.Add(this.labelNumeroConta);
             this.groupBox1.Controls.Add(this.textoSaldo);
-            this.groupBox1.Location = new System.Drawing.Point(29, 99);
+            this.groupBox1.Location = new System.Drawing.Point(29, 184);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(322, 220);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Conta";
+            // 
+            // botaoImpostos
+            // 
+            this.botaoImpostos.Location = new System.Drawing.Point(33, 189);
+            this.botaoImpostos.Name = "botaoImpostos";
+            this.botaoImpostos.Size = new System.Drawing.Size(183, 23);
+            this.botaoImpostos.TabIndex = 11;
+            this.botaoImpostos.Text = "Calcular Impostos";
+            this.botaoImpostos.UseVisualStyleBackColor = true;
+            this.botaoImpostos.Click += new System.EventHandler(this.BotaoImpostos_Click);
             // 
             // botaoTransfere
             // 
@@ -174,10 +187,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.botaoBusca);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.textoBuscaTitular);
             this.groupBox2.Controls.Add(this.comboContas);
             this.groupBox2.Location = new System.Drawing.Point(29, 31);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(322, 62);
+            this.groupBox2.Size = new System.Drawing.Size(322, 128);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Busca de Conta";
@@ -185,9 +201,9 @@
             // comboContas
             // 
             this.comboContas.FormattingEnabled = true;
-            this.comboContas.Location = new System.Drawing.Point(141, 21);
+            this.comboContas.Location = new System.Drawing.Point(6, 21);
             this.comboContas.Name = "comboContas";
-            this.comboContas.Size = new System.Drawing.Size(156, 24);
+            this.comboContas.Size = new System.Drawing.Size(289, 24);
             this.comboContas.TabIndex = 11;
             this.comboContas.Text = "Escolha a conta";
             this.comboContas.SelectedIndexChanged += new System.EventHandler(this.ComboContas_SelectedIndexChanged);
@@ -268,7 +284,7 @@
             // 
             // botaoNovaConta
             // 
-            this.botaoNovaConta.Location = new System.Drawing.Point(62, 325);
+            this.botaoNovaConta.Location = new System.Drawing.Point(62, 410);
             this.botaoNovaConta.Name = "botaoNovaConta";
             this.botaoNovaConta.Size = new System.Drawing.Size(102, 23);
             this.botaoNovaConta.TabIndex = 11;
@@ -276,15 +292,31 @@
             this.botaoNovaConta.UseVisualStyleBackColor = true;
             this.botaoNovaConta.Click += new System.EventHandler(this.BotaoNovaConta_Click);
             // 
-            // botaoImpostos
+            // textoBuscaTitular
             // 
-            this.botaoImpostos.Location = new System.Drawing.Point(33, 189);
-            this.botaoImpostos.Name = "botaoImpostos";
-            this.botaoImpostos.Size = new System.Drawing.Size(183, 23);
-            this.botaoImpostos.TabIndex = 11;
-            this.botaoImpostos.Text = "Calcular Impostos";
-            this.botaoImpostos.UseVisualStyleBackColor = true;
-            this.botaoImpostos.Click += new System.EventHandler(this.BotaoImpostos_Click);
+            this.textoBuscaTitular.Location = new System.Drawing.Point(6, 74);
+            this.textoBuscaTitular.Name = "textoBuscaTitular";
+            this.textoBuscaTitular.Size = new System.Drawing.Size(210, 22);
+            this.textoBuscaTitular.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 54);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(116, 17);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Buscar por titular";
+            // 
+            // botaoBusca
+            // 
+            this.botaoBusca.Location = new System.Drawing.Point(220, 73);
+            this.botaoBusca.Name = "botaoBusca";
+            this.botaoBusca.Size = new System.Drawing.Size(75, 23);
+            this.botaoBusca.TabIndex = 14;
+            this.botaoBusca.Text = "Buscar";
+            this.botaoBusca.UseVisualStyleBackColor = true;
+            this.botaoBusca.Click += new System.EventHandler(this.BotaoBusca_Click);
             // 
             // Form1
             // 
@@ -301,6 +333,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.contaTransferencia.ResumeLayout(false);
             this.contaTransferencia.PerformLayout();
             this.ResumeLayout(false);
@@ -333,6 +366,9 @@
         private System.Windows.Forms.Button botaoTransfere;
         private System.Windows.Forms.Button botaoNovaConta;
         private System.Windows.Forms.Button botaoImpostos;
+        private System.Windows.Forms.Button botaoBusca;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textoBuscaTitular;
     }
 }
 

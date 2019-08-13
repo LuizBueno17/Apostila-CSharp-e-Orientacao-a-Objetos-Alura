@@ -15,6 +15,7 @@ namespace Banco
     public partial class Form1 : Form
     {
         private List<Conta> contas;
+        private Dictionary<string, Conta> dicionario;
         public Form1()
         {
             InitializeComponent();
@@ -24,10 +25,11 @@ namespace Banco
             contas.Add(conta);
             comboContas.Items.Add(conta);
             comboContaRecebeTransferencia.Items.Add(conta);
-            //comboContas.DisplayMember = "Numero";
+            this.dicionario.Add(conta.Titular.Nome, conta);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.dicionario = new Dictionary<string, Conta>();
             contas = new List<Conta>();
 
             Conta c1 = new ContaPoupanca();
@@ -120,6 +122,23 @@ namespace Banco
             }
 
             MessageBox.Show("Total: " + totalizador.Total);
+        }
+
+        private void BotaoBusca_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string nomeTitular = textoBuscaTitular.Text;
+                Conta conta = dicionario[nomeTitular];
+                textoTitular.Text = conta.Titular.Nome;
+                textoNumero.Text = Convert.ToString(conta.Numero.ToString("X5"));
+                textoSaldo.Text = Convert.ToString(conta.Saldo);
+                comboContas.SelectedItem = conta;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Conta não encontrada");
+            }
         }
     }
 }
