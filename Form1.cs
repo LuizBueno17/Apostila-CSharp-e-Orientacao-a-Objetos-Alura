@@ -35,12 +35,15 @@ namespace Banco
 
             Conta c1 = new ContaPoupanca();
             c1.Titular = new Cliente("victor");
+            c1.Deposita(2000);
             this.AdicionaConta(c1);
             Conta c2 = new ContaPoupanca();
             c2.Titular = new Cliente("mauricio");
+            c2.Deposita(2000);
             this.AdicionaConta(c2);
             Conta c3 = new ContaCorrente();
             c3.Titular = new Cliente("osni");
+            c3.Deposita(2000);
             this.AdicionaConta(c3);
         }
 

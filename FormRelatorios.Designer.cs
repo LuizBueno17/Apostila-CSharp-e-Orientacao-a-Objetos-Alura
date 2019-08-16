@@ -32,10 +32,11 @@
             this.botaoFiltroSaldo = new System.Windows.Forms.Button();
             this.botaoFiltraContasAntigas = new System.Windows.Forms.Button();
             this.GroupBoxResumo = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelSaldoTotal = new System.Windows.Forms.Label();
             this.labelMaiorSaldo = new System.Windows.Forms.Label();
+            this.labelSaldoTotal = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.botaoOrdenaAlfabeticamente = new System.Windows.Forms.Button();
             this.GroupBoxResumo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             this.listaResultado.ItemHeight = 16;
             this.listaResultado.Location = new System.Drawing.Point(323, 12);
             this.listaResultado.Name = "listaResultado";
-            this.listaResultado.Size = new System.Drawing.Size(465, 420);
+            this.listaResultado.Size = new System.Drawing.Size(453, 388);
             this.listaResultado.TabIndex = 0;
             // 
             // botaoFiltroSaldo
@@ -81,23 +82,14 @@
             this.GroupBoxResumo.TabStop = false;
             this.GroupBoxResumo.Text = "Resumo";
             // 
-            // label1
+            // labelMaiorSaldo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Saldo Total";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 63);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Maior Saldo";
+            this.labelMaiorSaldo.AutoSize = true;
+            this.labelMaiorSaldo.Location = new System.Drawing.Point(148, 63);
+            this.labelMaiorSaldo.Name = "labelMaiorSaldo";
+            this.labelMaiorSaldo.Size = new System.Drawing.Size(46, 17);
+            this.labelMaiorSaldo.TabIndex = 3;
+            this.labelMaiorSaldo.Text = "label4";
             // 
             // labelSaldoTotal
             // 
@@ -108,20 +100,40 @@
             this.labelSaldoTotal.TabIndex = 2;
             this.labelSaldoTotal.Text = "label3";
             // 
-            // labelMaiorSaldo
+            // label2
             // 
-            this.labelMaiorSaldo.AutoSize = true;
-            this.labelMaiorSaldo.Location = new System.Drawing.Point(148, 63);
-            this.labelMaiorSaldo.Name = "labelMaiorSaldo";
-            this.labelMaiorSaldo.Size = new System.Drawing.Size(46, 17);
-            this.labelMaiorSaldo.TabIndex = 3;
-            this.labelMaiorSaldo.Text = "label4";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(31, 63);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Maior Saldo";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Saldo Total";
+            // 
+            // botaoOrdenaAlfabeticamente
+            // 
+            this.botaoOrdenaAlfabeticamente.Location = new System.Drawing.Point(323, 409);
+            this.botaoOrdenaAlfabeticamente.Name = "botaoOrdenaAlfabeticamente";
+            this.botaoOrdenaAlfabeticamente.Size = new System.Drawing.Size(152, 23);
+            this.botaoOrdenaAlfabeticamente.TabIndex = 4;
+            this.botaoOrdenaAlfabeticamente.Text = "Ordem alfabética";
+            this.botaoOrdenaAlfabeticamente.UseVisualStyleBackColor = true;
+            this.botaoOrdenaAlfabeticamente.Click += new System.EventHandler(this.BotaoOrdenaAlfabeticamente_Click);
             // 
             // FormRelatorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.botaoOrdenaAlfabeticamente);
             this.Controls.Add(this.GroupBoxResumo);
             this.Controls.Add(this.botaoFiltraContasAntigas);
             this.Controls.Add(this.botaoFiltroSaldo);
@@ -144,5 +156,6 @@
         private System.Windows.Forms.Label labelSaldoTotal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button botaoOrdenaAlfabeticamente;
     }
 }

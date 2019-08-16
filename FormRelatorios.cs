@@ -28,7 +28,7 @@ namespace Banco
         private void ListaContas(IEnumerable<Conta> resultado)
         {
             listaResultado.Items.Clear();
-            foreach (var c in resultado)
+            foreach (Conta c in resultado)
             {
                 listaResultado.Items.Add(c);
             }
@@ -42,6 +42,17 @@ namespace Banco
         {
             var resultado = contas.Where(c => c.Numero <= 10 && c.Saldo > 1000);
             ListaContas(resultado);
+        }
+
+        private void BotaoOrdenaAlfabeticamente_Click(object sender, EventArgs e)
+        {
+            List<Conta> lista = listaResultado.Items.Cast<Conta>().ToList();
+            listaResultado.Items.Clear();
+            //var ordenados = from c in lista
+            //          orderby c.Titular.Nome, c.Numero
+            //          select c;
+            var ordenados = lista.OrderBy(c => c.Titular.Nome).ThenBy(c => c.Numero);
+            ListaContas(ordenados);
         }
     }
 }
